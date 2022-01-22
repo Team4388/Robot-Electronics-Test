@@ -13,6 +13,7 @@ import static org.mockito.Mockito.mock;
 import org.junit.Test;
 
 import edu.wpi.first.wpilibj.*;
+import edu.wpi.first.wpilibj.motorcontrol.Spark;
 import frc4388.robot.Constants.LEDConstants;
 import frc4388.utility.LEDPatterns;
 
