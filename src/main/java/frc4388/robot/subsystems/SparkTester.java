@@ -4,15 +4,21 @@
 
 package frc4388.robot.subsystems;
 
+import com.revrobotics.CANSparkMax;
+
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class SparkTester extends SubsystemBase {
+  CANSparkMax m_sparkMaxTestMotor;
+  
   /** Creates a new SparkTester. */
-  public SparkTester(CANSparkMax m_sparkMaxMotor) {}
+  public SparkTester(CANSparkMax m_sparkMaxTestMotor) {
+    m_sparkMaxTestMotor = sparkMaxTestMotor;
+  }
 
   public void setMotorSpeed(double speed) {
     speed = Double.max(Double.min(speed, 1.d), -1.d);
-    m_sparkTestMotor.set(speed);
+    m_sparkMaxTestMotor.set(speed);
   }
 
   @Override
