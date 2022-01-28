@@ -9,10 +9,10 @@ import com.revrobotics.CANSparkMax;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class SparkTester extends SubsystemBase {
-  CANSparkMax m_sparkMaxTestMotor;
+  private CANSparkMax m_sparkMaxTestMotor;
   
   /** Creates a new SparkTester. */
-  public SparkTester(CANSparkMax m_sparkMaxTestMotor) {
+  public SparkTester(CANSparkMax sparkMaxTestMotor) {
     m_sparkMaxTestMotor = sparkMaxTestMotor;
   }
 
@@ -24,5 +24,6 @@ public class SparkTester extends SubsystemBase {
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
+    //Test
   }
 }
