@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc4388.robot.Constants.*;
 import frc4388.robot.subsystems.FalconTester;
 import frc4388.robot.subsystems.LED;
+import frc4388.robot.subsystems.SparkTester;
 import frc4388.utility.LEDPatterns;
 import frc4388.utility.controller.IHandController;
 import frc4388.utility.controller.XboxController;
@@ -34,7 +35,8 @@ public class RobotContainer {
 
     private final LED m_robotLED = new LED(m_robotMap.LEDController);
 
-    private final FalconTester m_falconTester = new FalconTester(m_robotMap.falconTestMotor);
+    // private final FalconTester m_falconTester = new FalconTester(m_robotMap.falconTestMotor);
+    private final SparkTester m_SparkTester = new SparkTester(m_robotMap.sparkTestMotor);
 
     /* Controllers */
     private final XboxController m_driverXbox = new XboxController(OIConstants.XBOX_DRIVER_ID);
@@ -48,12 +50,18 @@ public class RobotContainer {
 
         /* Default Commands */
         // drives the robot with a two-axis input from the driver controller
-        m_falconTester.setDefaultCommand(
-                new RunCommand(() -> m_falconTester.setMotorSpeed(0.1d * getDriverController().getLeftYAxis()),
-                 m_falconTester));
+
+        // m_falconTester.setDefaultCommand(
+        //         new RunCommand(() -> m_falconTester.setMotorSpeed(0.1d * getDriverController().getLeftYAxis()),
+        //          m_falconTester));
+        
+        m_SparkTester.setDefaultCommand(
+                         new RunCommand(() -> m_SparkTester.setMotorSpeed(0.25d * getDriverController().getLeftYAxis()),
+                          m_SparkTester));
         // continually sends updates to the Blinkin LED controller to keep the lights on
         m_robotLED.setDefaultCommand(new RunCommand(() -> m_robotLED.updateLED(), m_robotLED));
     }
+
 
     /**
      * Use this method to define your button->command mappings. Buttons can be

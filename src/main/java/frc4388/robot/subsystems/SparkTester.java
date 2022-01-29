@@ -17,13 +17,13 @@ public class SparkTester extends SubsystemBase {
   }
 
   public void setMotorSpeed(double speed) {
-    speed = Double.max(Double.min(speed, 1.d), -1.d);
+    // speed = Double.max(Double.min(speed, 1.d), -1.d);
     m_sparkMaxTestMotor.set(speed);
+    System.err.println(speed);
   }
 
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
-    //Test
   }
 }

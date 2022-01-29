@@ -42,4 +42,7 @@ public final class Constants {
     public static final class FalconTesterConstants {
         public static final int CAN_ID = 1;
     }
+    public static final class SparkTesterConstants {
+        public static final int CAN_ID = 2;
+    }
 }
